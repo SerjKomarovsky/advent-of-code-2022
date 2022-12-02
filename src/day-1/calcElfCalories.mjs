@@ -1,9 +1,7 @@
-import fs from 'fs';
-
-const getSource = (path) => fs.readFileSync(path, 'utf-8').split('\n');
+import { readSource } from "../readSource.mjs";
 
 export const calcElfCalories = (source) => {
-    const inputData = getSource(source);
+    const inputData = readSource(source);
 
     const elfsCalories = [0];
     inputData.reduce((list, record, index) => {
